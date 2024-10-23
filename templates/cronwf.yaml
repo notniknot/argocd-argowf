@@ -3,11 +3,11 @@ kind: CronWorkflow
 metadata:
   name: test-cron-wf
 spec:
-  serviceAccountName: argo-workflow
-  schedule: "10 * * * *"
+  schedule: "*//10 * * * *"
   concurrencyPolicy: "Replace"
   startingDeadlineSeconds: 0
   workflowSpec:
+    serviceAccountName: argo-workflow
     entrypoint: date
     templates:
     - name: date
